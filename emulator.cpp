@@ -71,7 +71,6 @@ void Emulator::handle0Family()
     if (nnn == 0x0E0)
     {
         display.clear();
-        display.update();
     }
     else if (nnn == 0x0EE)
     {
@@ -222,15 +221,16 @@ void Emulator::drawSprite()
         {
             if ((sprite & (0x80 >> j)) != 0)
             {
+                std ::cout << "Drawing pixel at " << (V[x] + j) << " " << (V[y] + i) << std::endl;
                 if (display.getPixel((V[x] + j), (V[y] + i)))
                 {
                     V[0xF] = 1;
                 }
-                display.setPixel((V[x] + j), (V[y] + i) , display.getPixel((V[x] + j) , (V[y] + i) ) ^ 1);
+                display.setPixel((V[x] + j), (V[y] + i), !display.getPixel((V[x] + j), (V[y] + i)));
             }
         }
     }
-    display.update();
+         display.update();
 }
 
 void Emulator::handleEFamily()

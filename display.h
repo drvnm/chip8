@@ -13,7 +13,7 @@ class Display
     private: 
         SDL_Window *window;
         SDL_Renderer *renderer;
-        bool display[SCREEN_WIDTH][SCREEN_HEIGHT] = {false};
+        int display[SCREEN_WIDTH][SCREEN_HEIGHT];
 
     public:
         Display();
@@ -21,7 +21,6 @@ class Display
         void update();
         void clear();
         void setPixel(int x, int y, bool on);
-        // true if there is a pixel at x,y, false otherwise
         bool getPixel(int x, int y);
 
 };
