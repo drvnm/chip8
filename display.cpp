@@ -1,19 +1,19 @@
 #include "display.h"
 Display::Display()
 {
-    SDL_Init(SDL_INIT_EVERYTHING);
-    window = SDL_CreateWindow("Chip8 Emulator", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH * 10, SCREEN_HEIGHT * 10, SDL_WINDOW_SHOWN);
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
+    // SDL_Init(SDL_INIT_EVERYTHING);
+    // window = SDL_CreateWindow("Chip8 Emulator", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH * 10, SCREEN_HEIGHT * 10, SDL_WINDOW_SHOWN);
+    // renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    // SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-    // clear the display
-    for (int x = 0; x < SCREEN_WIDTH; x++)
-    {
-        for (int y = 0; y < SCREEN_HEIGHT; y++)
-        {
-            display[x][y] = false;
-        }
-    }
+    // // clear the display
+    // for (int x = 0; x < SCREEN_WIDTH; x++)
+    // {
+    //     for (int y = 0; y < SCREEN_HEIGHT; y++)
+    //     {
+    //         display[x][y] = false;
+    //     }
+    // }
 }
 
 Display::~Display()

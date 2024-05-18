@@ -372,7 +372,7 @@ void Emulator::decode()
 void Emulator::cycle()
 {
     // Constants for timing
-    const int instructionsPerSecond = 900;                     // Target instructions per second
+    const int instructionsPerSecond = 400;                     // Target instructions per second
     const auto instructionTime = 1000 / instructionsPerSecond; // Time per instruction
 
     auto nextInstructionTime = clock();
